@@ -8,7 +8,7 @@ Instalación:
 Vamos a instalarlo desde el repositorio, aunque también se puede instalar desde
 su github.
 Antes tenemos que actualizar:
----
+-------
 >sudo apt update -y && sudo apt dist-upgrade -y
 >sudo apt install recon-ng
 
