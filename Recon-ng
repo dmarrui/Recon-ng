@@ -1,0 +1,73 @@
+RECON-NG
+¿Qué es Recon-ng?
+Es una herramienta que nos permite recopilar información desde múltiples fuentes
+automatizando el proceso. Tiene una apariencia similar a Metasploit, lo que reduce
+la curva de aprendizaje. Almacena los datos en bases de datos que luego se
+pueden consultar.
+Instalación:
+Vamos a instalarlo desde el repositorio, aunque también se puede instalar desde
+su github.
+Antes tenemos que actualizar:
+sudo apt update -y && sudo apt dist-upgrade -y
+sudo apt install recon-ngIniciar:
+Como podemos observar con la instalación tenemos tres interfaces. Cli: permite
+el uso desde la línea de comandos. Ng: interface recon. Web: reconocimiento
+basado en web.
+Escribimos el siguiente comando:
+sudo recon-ngAntes de empezar hay que ver que es lo que podemos hacer:
+help
+Workspaces:
+Recon nos permite trabajar con espacios de trabajo, para no mezclar información.
+Por defecto nos crea uno llamado default. Escribimos el siguiente comando:
+workspaces
+Por defecto nos sitúa en default y al crear otro workspaces nos sitúa en el nuevo:
+workspaces create test
+workspaces listPara volver a cambiar simplemente el comando load más el nombre:
+workspaces load default
+Para borrar el comando remove:
+workspace remove test
+Bases de datos:
+Para poder consultar la información y ver los comandos escribimos:
+db
+Podemos borrar, añadir, notas, consultar y ver. Para ver las tablas:
+db schemaUso de claves:
+Podemos cargar las keys de las API que tengamos de otros servicios como: Bing,
+Google…ect Para ello usaremos el siguiente comando:
+keys
+keys add {API Bing}
+Ver información:
+Para ver parte de la información almacenada, sólo tenemos que usar el comando
+show:
+show
+show credentials
+Snapshots:
+Podemos crear backups de los workspaces con el comando snapshots:
+snapshots
+snapshots take¿Qué son los módulos?
+Son herramientas que nos descargamos desde el Marketplace y que nos permite
+automatizar la tarea de recopilar información desde fuentes abiertas:
+modules
+¿Qué es el Marketplace?
+Es una especie de repositorio con los módulos y versiones que podemos instalar:
+marketplace
+Para listar todos los módulos necesitamos el comando search:
+marketplace search
+Podemos observar que tenemos información adicional:
+➢ Path: Ruta y nombre del módulo
+➢ Versión: Es la versión correspondiente
+➢ Status: Si está instalada o no
+➢ Updated: Fecha de la última modificación
+➢ D: Si el módulo tiene dependencias
+➢ K: Claves de terceros que tenemos que necesitamos para correr el móduloSi queremos hacer una búsqueda más precisa:
+marketplace search hackertarget
+Para instalar:
+marketplace install recon/domain-hosts/hackertarget
+A hora cargamos el módulo y vemos la información:
+modules load recon/domain-hosts/hackertarget:
+infoPara cambiar los valores con options:
+options
+Cambiamos con set:
+options set SOURCE hackxor.net
+Finalizamos con run:
+Run
+Para ampliar la información tenemos su wiki
